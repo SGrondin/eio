@@ -1,3 +1,10 @@
 (executables
   (names stress_semaphore stress_proc)
-  (libraries eio_main))
+  (libraries eio_main)
+  ; (link_flags (
+  ;   -cclib -g
+  ;   -cclib -O1
+  ;   -cclib -fno-omit-frame-pointer
+  ;   -cclib -fsanitize=address
+  ; ))
+  )

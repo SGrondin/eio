@@ -7,7 +7,6 @@ let n_procs_per_round_per_domain = 100 / n_domains
 let run_in_domain mgr =
   Switch.run @@ fun sw ->
   let _echo n = Eio.Process.parse_out mgr Eio.Buf_read.line ["sh"; "-c"; "sleep 0.2 && echo " ^ string_of_int n] in
-  (* let echo n = Eio.Process.parse_out mgr Eio.Buf_read.line ["/bin/echo"; string_of_int n] in *)
   let _echo2 n =
     let pipe1_r, pipe1_w = Eio_unix.pipe sw in
     let fd flow = Eio_unix.Resource.fd flow in
